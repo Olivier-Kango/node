@@ -11,7 +11,7 @@ const client = new Client({
 client.connect();
 result = client.query('SELECT * FROM blagues;')
   .then((result) => {
-    console.log(result);
+    console.log(result.rows);
   })
 
 
