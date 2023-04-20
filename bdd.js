@@ -9,11 +9,16 @@ const client = new Client({
 });
 
 client.connect();
-const result = client.query('SELECT * FROM blagues;');
+result = client.query('SELECT * FROM blagues;')
+  .then((result) => {
+    console.log(result);
+  })
+
+
 // console.log(result);
-console.log(1)
-console.log(2)
-setTimeout(() => {
-  console.log(3);
-}, 1000);
-console.log(4)
+// console.log(1)
+// console.log(2)
+// setTimeout(() => {
+//   console.log(3);
+// }, 1000);
+// console.log(4)
