@@ -15,3 +15,7 @@ client.query('SELECT * FROM blagues;')
     console.log(result.rows)
   })
 
+  .catch((error) => {
+    console.error('Erreur survenue: ', error.message)
+  })
+
