@@ -10,5 +10,8 @@ const client = new Client({
 
 client.connect();
 
-const result = client.query('SELECT * FROM blagues;');
-console.log(result);
+client.query('SELECT * FROM blagues;')
+  .then((result) => {
+    console.log(result.rows)
+  })
+
