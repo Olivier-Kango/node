@@ -7,3 +7,5 @@ const client = new Client({
   password: 'Bleu111111',
   database: 'postgres'
 });
+
+client.connect();
