@@ -12,11 +12,14 @@ const client = new Client({
 client.connect();
 
 client.query('SELECT * FROM blagues;')
+  .then((result) => {
+    console.log(result)
+  })
 
-console.log('1- Je me réveille');
-console.log('2- Je prend mon petit Déjeuner');
-setTimeout(() => {
-  console.log("3- J'écoute un poadcast")
-}, 1000);
-console.log('4- Je travaille');
+// console.log('1- Je me réveille');
+// console.log('2- Je prend mon petit Déjeuner');
+// setTimeout(() => {
+//   console.log("3- J'écoute un poadcast")
+// }, 1000);
+// console.log('4- Je travaille');
 
