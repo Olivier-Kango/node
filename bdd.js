@@ -13,7 +13,7 @@ client.connect();
 
 client.query('SELECT * FROM blagues;')
   .then((result) => {
-    console.log(result)
+    console.log(result.rows)
   })
 
 // console.log('1- Je me réveille');
