@@ -1,4 +1,4 @@
-const { cpSync } = require('fs');
+const { cpSync, closeSync } = require('fs');
 const { Client } = require('pg');
 
 const client = new Client({
@@ -11,10 +11,14 @@ const client = new Client({
 
 client.connect();
 
-client.query('SELECT * FROM blagues;')
+client.query('SELEC * FROM blagues;')
   .then((result) => {
     console.log(result.rows)
   })
+
+  .catch((error) => {
+    console.log(error)
+  });
 
 // console.log('1- Je me réveille');
 // console.log('2- Je prend mon petit Déjeuner');
