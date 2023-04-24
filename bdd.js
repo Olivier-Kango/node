@@ -11,13 +11,13 @@ const client = new Client({
 
 client.connect();
 
-client.query('SELEC * FROM blagues;')
+client.query('SELECT * FROM blagues;')
   .then((result) => {
     console.log(result.rows)
   })
 
   .catch((error) => {
-    console.log(error)
+    console.log('Erreur survenue :', error.message)
   });
 
 // console.log('1- Je me réveille');
