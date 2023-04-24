@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/Olivier-Kango/node/issues"
   },
-  "homepage": "https://github.com/Olivier-Kango/node#readme"
+  "homepage": "https://github.com/Olivier-Kango/node#readme",
+  "dependencies": {
+    "module": "^1.2.5",
+    "pg": "^8.10.0"
+  }
 }
