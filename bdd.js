@@ -9,3 +9,6 @@ const client = new Client({
 });
 
 client.connect();
+
+const result = client.query('SELECT * FROM blagues;');
+console.log(result);
