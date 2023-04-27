@@ -13,7 +13,19 @@
 const http = require('http');
 
 const serveur = http.createServer((requete, response) => {
-  console.log("Serveur créé")
+  // console.log("Serveur créé")
+
+  // Définition de l'entête.
+  response.setHeader("content-type", "text/plain");
+
+  if(requete.url === '/accueil') {
+    response.write("Bienvenue tres cher developpeur")
+  } else if(requete.url === '/profil') {
+    response.write("Vous un developer backend")
+  } else {
+    response.write("url non valid")
+  }
+  response.end();
 });
 
 serveur.listen(3001, 'localhost', () => {
