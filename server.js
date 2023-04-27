@@ -10,13 +10,12 @@
 // Node Js sert à créer des applications qui seront exécuté dans l'ordinateur qui joue le rôle du serveur pour qu'il soit en mesure d'écouter les requêtes de la partie client.
 // Bref NodeJs fait qu'un ordinateur se comporte en Serveur.
 
-
 const http = require('http');
 
-const serveur = http.createServer((requete, reponse) => {
-  console.log("Serveur crée");
-})
+const serveur = http.createServer((requete, response) => {
+  console.log("Serveur créé")
+});
 
 serveur.listen(3001, 'localhost', () => {
-  console.log("Prêt à écouter les requêtes au port 3001");
-})
+  console.log("Connecté au port 3001")
+});
