@@ -18,3 +18,21 @@
 // Manipulation de la base de données MYSQL
 
 // NOTIONS FONDAMENTALES NODE JS
+
+// let nom = "Louis Musole";
+// console.log(nom);
+
+const salut = (nom) => {
+  console.log("Salut très cher " + nom)
+}
+
+salut("Amani Bisimwa");
+salut("Louis Musole");
+
+const tab = ["papa", "maman", "enfant"]
+console.log(tab)
+tab.push("Autres members");
+console.log(tab);
+console.log(tab[2]);
+
+
