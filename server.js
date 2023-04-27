@@ -12,22 +12,22 @@
 
 const http = require('http');
 
-const serveur = http.createServer((requete, response) => {
-  // console.log("Serveur créé")
 
-  // Définition de l'entête.
-  response.setHeader("content-type", "text/plain");
+const serveur = http.createServer((requete, reponse) => {
+  reponse.setHeader("content-type", "text/html");
+  reponse.write("<header><meta charset='utf8'></header>")
 
-  if(requete.url === '/accueil') {
-    response.write("Bienvenue tres cher developpeur")
-  } else if(requete.url === '/profil') {
-    response.write("Vous un developer backend")
+  if(requete.url === "/accueil") {
+    reponse.write("<h2>Accueil</h2><p>Bienvenue sur notre page</p>")
+  } else if(requete.url === "/profil") {
+    reponse.write("<h2>Profil</h2><p>Développeurs Backend</p>")
   } else {
-    response.write("url non valid")
+    reponse.write("<h2>Error</h2><p>Url invalid</p>")
   }
-  response.end();
-});
+
+  reponse.end();
+})
 
 serveur.listen(3001, 'localhost', () => {
-  console.log("Connecté au port 3001")
-});
+  console.log('Connecté au port 3001')
+})
