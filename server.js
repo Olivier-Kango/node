@@ -21,22 +21,14 @@ const serveur = http.createServer((requete, reponse) => {
   let fichier = "";
 
   if(requete.url === "/accueil") {
-    fichier = './mesFichiers/accueil.html';
-    readFile(fichier, (error) => {
-      if(error) {
-        console.log(error.message)
-      } else {
-        console.log('success')
-      }
-    })
-    // reponse.write("<h2>Accueil</h2><p>Bienvenue sur notre page</p>")
+    fichier = './IHM/accueil.html';
   } else if(requete.url === "/profile") {
     // reponse.write("<h2>Profil</h2><p>Développeurs Backend</p>")
-    fichier = 'IHM/mesFichiers/profil.html';
+    fichier = './IHM/profil.html';
     reponse.readFile(fichier)
   } else {
     // reponse.write("<h2>Error</h2><p>Url invalid</p>")
-    fichier = 'IHM/mesFichiers/erreur.html';
+    fichier = './IHM/erreur.html';
     reponse.readFile(fichier)
   }
 
