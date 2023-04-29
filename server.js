@@ -26,7 +26,7 @@ const serveur = http.createServer((requete, reponse) => {
     fichier = './IHM/accueil.html';
   } else if(requete.url === "/profile") {
     // reponse.write("<h2>Profil</h2><p>Développeurs Backend</p>")
-    fichier = './IHM/profil.html';
+    fichier = './IHM/profile.html';
   } else {
     // reponse.write("<h2>Error</h2><p>Url invalid</p>")
     fichier = './IHM/erreur.html';
