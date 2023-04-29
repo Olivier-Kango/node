@@ -35,11 +35,13 @@ const serveur = http.createServer((requete, reponse) => {
   readFile(fichier, (err, donnee) => {
     if(err) {
       console.log(err.message)
+      reponse.end()
     } else {
-      write(donnee)
+      reponse.write(donnee)
+      reponse.end()
     }
   })
-  reponse.end(fichier);
+  // reponse.end(fichier);
 })
 
 serveur.listen(3001, 'localhost', () => {
