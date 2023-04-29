@@ -10,22 +10,37 @@
 // Node Js sert à créer des applications qui seront exécuté dans l'ordinateur qui joue le rôle du serveur pour qu'il soit en mesure d'écouter les requêtes de la partie client.
 // Bref NodeJs fait qu'un ordinateur se comporte en Serveur.
 
+const { readFile } = require('fs');
 const http = require('http');
 
 
 const serveur = http.createServer((requete, reponse) => {
-  reponse.setHeader("content-type", "text/html");
-  reponse.write("<header><meta charset='utf8'></header>")
+  // reponse.setHeader("content-type", "text/html");
+  // reponse.write("<header><meta charset='utf8'></header>")
+
+  let fichier = "";
 
   if(requete.url === "/accueil") {
-    reponse.write("<h2>Accueil</h2><p>Bienvenue sur notre page</p>")
-  } else if(requete.url === "/profil") {
-    reponse.write("<h2>Profil</h2><p>Développeurs Backend</p>")
+    fichier = './mesFichiers/accueil.html';
+    readFile(fichier, (error) => {
+      if(error) {
+        console.log(error.message)
+      } else {
+        console.log('success')
+      }
+    })
+    // reponse.write("<h2>Accueil</h2><p>Bienvenue sur notre page</p>")
+  } else if(requete.url === "/profile") {
+    // reponse.write("<h2>Profil</h2><p>Développeurs Backend</p>")
+    fichier = 'IHM/mesFichiers/profil.html';
+    reponse.readFile(fichier)
   } else {
-    reponse.write("<h2>Error</h2><p>Url invalid</p>")
+    // reponse.write("<h2>Error</h2><p>Url invalid</p>")
+    fichier = 'IHM/mesFichiers/erreur.html';
+    reponse.readFile(fichier)
   }
 
-  reponse.end();
+  reponse.end(fichier);
 })
 
 serveur.listen(3001, 'localhost', () => {
