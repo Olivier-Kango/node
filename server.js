@@ -10,13 +10,15 @@
 // Node Js sert à créer des applications qui seront exécuté dans l'ordinateur qui joue le rôle du serveur pour qu'il soit en mesure d'écouter les requêtes de la partie client.
 // Bref NodeJs fait qu'un ordinateur se comporte en Serveur.
 
-const { readFile } = require('fs');
+const { readFile, write } = require('fs');
 const http = require('http');
 
 
 const serveur = http.createServer((requete, reponse) => {
   // reponse.setHeader("content-type", "text/html");
   // reponse.write("<header><meta charset='utf8'></header>")
+
+  reponse.setHeader('content-type', 'text/html')
 
   let fichier = "";
 
@@ -25,13 +27,18 @@ const serveur = http.createServer((requete, reponse) => {
   } else if(requete.url === "/profile") {
     // reponse.write("<h2>Profil</h2><p>Développeurs Backend</p>")
     fichier = './IHM/profil.html';
-    reponse.readFile(fichier)
   } else {
     // reponse.write("<h2>Error</h2><p>Url invalid</p>")
     fichier = './IHM/erreur.html';
-    reponse.readFile(fichier)
   }
 
+  readFile(fichier, (err, donnee) => {
+    if(err) {
+      console.log(err.message)
+    } else {
+      write(donnee)
+    }
+  })
   reponse.end(fichier);
 })
 
