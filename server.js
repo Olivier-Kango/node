@@ -17,6 +17,7 @@ const http = require('http');
 const serveur = http.createServer((requete, reponse) => {
   // reponse.setHeader("content-type", "text/html");
   // reponse.write("<header><meta charset='utf8'></header>")
+  console.log(reponse)
 
   reponse.setHeader('content-type', 'text/html')
 
