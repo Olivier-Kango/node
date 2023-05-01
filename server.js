@@ -12,10 +12,11 @@
 
 const { readFile, write } = require('fs');
 const http = require('http');
+const { v4 } = require('uuid')
 
 
 const serveur = http.createServer((requete, reponse) => {
-  console.log('requête effectuée avec succès')
+  console.log(v4())
   // reponse.setHeader("content-type", "text/html");
   // reponse.write("<header><meta charset='utf8'></header>")
   
