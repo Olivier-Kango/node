@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "uuid": "^9.0.0"
   },
   "scripts": {
     "start": "node server.js"
@@ -8,7 +9,6 @@
   "name": "node",
   "version": "1.0.0",
   "main": "fichiers.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Olivier-Kango/node.git"
