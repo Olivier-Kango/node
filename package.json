@@ -1,5 +1,23 @@
 {
   "dependencies": {
     "nodemon": "^2.0.22"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "node",
+  "version": "1.0.0",
+  "main": "fichiers.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Olivier-Kango/node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Olivier-Kango/node/issues"
+  },
+  "homepage": "https://github.com/Olivier-Kango/node#readme",
+  "description": ""
 }
