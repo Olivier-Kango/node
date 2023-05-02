@@ -10,8 +10,12 @@ app.get('/profile', (req, res) => {
   res.status(200).sendFile('IHM/profile.html', { root: __dirname })
 });
 
+app.get('/', (req, res) => {
+  res.status(300).redirect('/accueil')
+});
+
 app.use((req, res) => {
-  res.status(400).sendFile('IHM/erreur.html', { root: __dirname })
+  res.status(404).sendFile('IHM/erreur.html', { root: __dirname })
 });
 
 
