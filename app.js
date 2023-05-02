@@ -1,12 +1,11 @@
 const express = require('express');
 
 const app = express();
-console.log(app);
 
-// app.get((req, res) => {
-//   res.status(200).send('Hello world !')
-// })
+app.get('/accueil', (req, res) => {
+  res.status(200).send('Hello world !'), { root: __dirname }
+})
 
-// app.listen(3001, () => {
-//   console.log('en attente de la requête !')
-// })
+app.listen(3001, () => {
+  console.log('en attente de la requête !')
+})
